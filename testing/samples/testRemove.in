@@ -1,0 +1,16 @@
+# Check that we can remove a file.
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> rm wug.txt
+<<<
+E wug.txt
+> add wug.txt
+<<<
+> commit "added wug"
+<<<
+> rm wug.txt
+<<<
+* wug.txt

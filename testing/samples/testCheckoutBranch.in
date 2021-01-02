@@ -1,0 +1,26 @@
+# Checks that we can checkout a previous branch
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit "added wug"
+<<<
+> branch "Branch 2"
+<<<
++ wug2.txt wug2.txt
+> add wug2.txt
+<<<
+> commit "added wug2"
+<<<
+> checkout "Branch 2"
+<<<
+* wug2.txt
++ notwug.txt notwug.txt
+> add notwug.txt
+<<<
+> commit "added notwug"
+<<<
+> checkout master
+<<<
+* notwug.txt

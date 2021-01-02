@@ -1,0 +1,45 @@
+Gitlet Design Document
+----------------------
+
+
+Classes and Data Structures
+---------------------------
+
+**** Gitlet ****
+ HashMap <String, Commit> commitMap: HashMap that stores commits
+ HashMap <String, Blob> stageMap: HashMap that stores files in staging area
+ String _curbranch: current branch of gitlet object
+ HashMap<String, String> branchMap: Hashmap that stores all branches
+ HashMap <String, Blob> removeMap: map representing files marked to be removed
+ HashMap<HashMap, String> fileDirectory: Keeps track of hashmap to string mapping
+
+**** Main ****
+ArrayList<String> arguments: reads arguments from user and stores in an arraylist
+
+**** Commit ****
+ HashMap<String, Blob> _blobList: map of filenames to blobs in a commit
+ String _parent: sha1 of parent commit
+ String _message: commit message
+ Date _date: date time that the commit was created
+ String _branch: the branch that the commit is a member of
+
+**** Blob ****
+ String _name: filename associated with blob
+ byte[] _contents: serialized contents of a blob
+
+Algorithms
+----------
+**** Gitlet ****
+
+add: pull hashmap from serialized file in .gitlet directory, add a mapping from file name to blob object to map, push map back to file
+commit: same as add but with the commitMap hashmap
+
+
+Persistence
+-----------
+
+Generally, persistence is achieved by serializing a set hashmaps which represent the commit tree,
+the staging area, the removal area, and the branches.
+
+After add: files are committed by looking at the stage map and adding all files to a Commit object's BlobList
+Before checkout: files are checked out by looking at the commit hashmap and finding the correct map from commitid to commit object

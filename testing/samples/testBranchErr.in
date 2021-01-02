@@ -1,0 +1,6 @@
+# Error case for checkout
+> init
+<<<
+> branch master
+A branch with that name already exists.
+<<<

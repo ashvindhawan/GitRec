@@ -1,0 +1,16 @@
+# Error case for checkout
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit abcde
+<<<
++ notwug.txt notwug.txt
+> add notwug.txt
+<<<
+> commit def
+<<<
+> checkout -- wrong
+File does not exist in that commit.
+<<<

@@ -1,0 +1,6 @@
+# Error case for initial
+> init
+<<<
+> commit a b c d
+Incorrect operands.
+<<<

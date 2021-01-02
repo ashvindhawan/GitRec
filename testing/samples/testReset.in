@@ -1,0 +1,21 @@
+# Check that reset errors in the right place
+> init
+<<<
++ wug.txt wug.txt
+> add wug.txt
+<<<
+> commit "added wug"
+<<<
+> branch branch2
+<<<
+> rm wug.txt
+<<<
++ notwug.txt notwug.txt
+> add notwug.txt
+<<<
+> commit "added notwug"
+<<<
++ wug.txt wug.txt
+> checkout branch2
+There is an untracked file in the way; delete it or add it first.
+<<<*
